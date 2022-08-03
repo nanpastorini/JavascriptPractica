@@ -5,23 +5,26 @@
 function edadPerro(){
     let edad = prompt ("Ingrese la edad de su perro");
     alert ("la edad ingresada es" + edad);
+    return edad;
 }
 
-
-function calcularPlan(){
+function calcularPlan(edadP){
     costo=0;
-    if (edadPerro<1) {
+    if (edadP<1) {
         costo=500;
     }
     else {
-        if (edadPerro>=1){
-            costo=500 + (50 * edadPerro);
-        }
+        costo=500 + (50 * edadP);    
     }
     return costo;
 }
 
 //Función que muestra resultado por consola
 function mostrar(mensaje) {
-    console.log(mensaje);
+    alert(mensaje);
 }
+
+let edad= edadPerro();
+let costoPlan= calcularPlan(edad);
+mostrar ("la edad ingresada es " + edad + "y el plan cuesta " + costoPlan);
+
